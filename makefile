@@ -2,7 +2,7 @@ CXX := g++
 CXXFLAGS := -Wall -g
 LDFLAGS := -g
 TARGET := marihuana
-SRCS := $(wildcard *.cpp)
+SRCS := $(wildcard *.cpp) $(wildcard */*.cpp)
 OBJS := $(patsubst %.cpp,%.o,$(SRCS))
 LIBS := -lsfml-graphics -lsfml-system -lsfml-window
 

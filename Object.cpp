@@ -2,7 +2,7 @@
 
 Object::Object() 
     : sprite() 
-    , x(0), y(0), vspeed(0), hspeed(0), maxspeed(4)
+    , x(0), y(0), vspeed(0), hspeed(0)
 {
 }
 void Object::ProcessSteps() {
@@ -18,22 +18,15 @@ void Object::ProcessSteps() {
 const sf::Drawable& Object::GetDrawable() {
     return sprite.Shape;
 }
-void Object::GoDown() {
-    vspeed = maxspeed;
-    hspeed = 0;    
+void Object::GoDown(float speed) {
+    vspeed += speed;
 }
-void Object::GoUp() {
-    vspeed = -maxspeed;
-    hspeed = 0;    
+void Object::GoUp(float speed) {
+    vspeed -= speed;
 }
-void Object::GoRight() {
-    vspeed = 0;
-    hspeed = maxspeed;    
+void Object::GoRight(float speed) {
+    hspeed += speed;
 }
-void Object::GoLeft() {
-    vspeed = 0;
-    hspeed = -maxspeed;    
-}
-void Object::Stop() {
-    vspeed = hspeed = 0;
+void Object::GoLeft(float speed) {
+    hspeed -= speed;
 }

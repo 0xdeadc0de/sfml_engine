@@ -23,22 +23,11 @@ void Game::processEvents() {
             window.close(); 
             
         else if (e == sf::Event::KeyPressed)
-            playerInput(event.key.code, true);
+            player.ProcessInput(event.key.code, true);
             
         else if (e == sf::Event::KeyReleased)
-            playerInput(event.key.code, false);
+            player.ProcessInput(event.key.code, false);
     }
-}
-void Game::playerInput(sf::Keyboard::Key key, bool pressed) {
-    
-    if (!pressed) {
-        player.Stop();
-        return;
-    }
-         if (key == sf::Keyboard::W) player.GoUp(); 
-    else if (key == sf::Keyboard::A) player.GoLeft();  
-    else if (key == sf::Keyboard::S) player.GoDown();
-    else if (key == sf::Keyboard::D) player.GoRight(); 
 }
 void Game::update() {
     player.ProcessSteps();

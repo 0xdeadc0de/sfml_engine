@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "Object.hpp"
+#include "objects/Player.hpp"
 class Game
 {
 public:
@@ -7,10 +7,9 @@ public:
     void Run();
 private:
     void processEvents();
-    void playerInput(sf::Keyboard::Key, bool);
     void update();
     void render();
 private:
     sf::RenderWindow window;
-    Object player;
+    Player player;
 };
